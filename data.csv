@@ -1,0 +1,56 @@
+ID,State,abbreviation,poverty,hasHealthcare
+1,Alabama,AL,19.3,86.1
+2,Alaska,AK,11.2,85
+4,Arizona,AZ,18.2,85.6
+5,Arkansas,AR,18.9,83.7
+6,California,CA,16.4,85.2
+8,Colorado,CO,12,87.2
+9,Connecticut,CT,10.8,91.3
+10,Delaware,DE,12.5,91.4
+11,District of Columbia,DC,17.7,91.7
+12,Florida,FL,16.5,82.4
+13,Georgia,GA,18.3,79.1
+15,Hawaii,HI,11.4,91.9
+16,Idaho,ID,14.8,83.5
+17,Illinois,IL,14.4,88.1
+18,Indiana,IN,15.2,85.3
+19,Iowa,IA,12.2,92.3
+20,Kansas,KS,13.6,85.5
+21,Kentucky,KY,19.1,90
+22,Louisiana,LA,19.8,81.3
+23,Maine,ME,14.1,89
+24,Maryland,MD,10.1,90.8
+25,Massachusetts,MA,11.6,95.4
+26,Michigan,MI,16.2,89.7
+27,Minnesota,MN,11.5,92.7
+28,Mississippi,MS,21.5,81.2
+29,Missouri,MO,15.5,87.1
+30,Montana,MT,15.4,87.1
+31,Nebraska,NE,12.4,87.7
+32,Nevada,NV,15.2,82.9
+33,New Hampshire,NH,9.2,88.6
+34,New Jersey,NJ,11.1,87.6
+35,New Mexico,NM,21.3,84.6
+36,New York,NY,15.9,87.7
+37,North Carolina,NC,17.2,83.9
+38,North Dakota,ND,11.5,91.2
+39,Ohio,OH,15.8,89.8
+40,Oklahoma,OK,16.6,86.1
+41,Oregon,OR,16.6,89
+42,Pennsylvania,PA,13.6,89.9
+44,Rhode Island,RI,14.3,92
+45,South Carolina,SC,18,82.9
+46,South Dakota,SD,14.2,90.1
+47,Tennessee,TN,18.3,85.8
+48,Texas,TX,17.2,75.1
+49,Utah,UT,11.7,86.1
+50,Vermont,VT,12.2,93.3
+51,Virginia,VA,11.8,87
+53,Washington,WA,13.2,89.3
+54,West Virginia,WV,18.3,89.9
+55,Wisconsin,WI,13.2,91.5
+56,Wyoming,WY,11.2,84.9
+72,Puerto Rico,GU,46.2,75.2
+,,PR,,94.1
+,,UW,,87.6
+,,US,,87.6
