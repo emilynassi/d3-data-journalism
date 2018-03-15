@@ -1,7 +1,12 @@
 var svgWidth = 960;
 var svgHeight = 500;
 
-var margin = { top: 20, right: 40, bottom: 60, left: 100 };
+var margin = {
+  top: 20,
+  right: 40,
+  bottom: 60,
+  left: 100
+};
 
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
@@ -22,10 +27,10 @@ d3.select(".chart")
   .attr("class", "tooltip")
   .style("opacity", 0);
 
-d3.csv("data.csv", function(err, povertyData) {
+d3.csv("data.csv", function (err, povertyData) {
   if (err) throw err;
 
-  povertyData.forEach(function(data) {
+  povertyData.forEach(function (data) {
     data.poverty = +data.poverty;
     data.hasHealthcare = +data.hasHealthcare;
   });
@@ -43,23 +48,27 @@ d3.csv("data.csv", function(err, povertyData) {
   var leftAxis = d3.axisLeft(yLinearScale);
 
   // Scale the domain
-  xLinearScale.domain([(20, d3.min(povertyData, function(data) {
-    return +data.poverty-1;
-  })), (d3.max(povertyData, function(data){
-    return +data.poverty+1}))]);
+  xLinearScale.domain([(20, d3.min(povertyData, function (data) {
+    return +data.poverty - 1;
+  })), (d3.max(povertyData, function (data) {
+    return +data.poverty + 1
+  }))]);
 
-  yLinearScale.domain([(0, d3.min(povertyData, function(data) {
-    return +data.hasHealthcare-1;
-  })), (d3.max(povertyData, function(data){
-    return +data.hasHealthcare+1}))]);
+  yLinearScale.domain([(0, d3.min(povertyData, function (data) {
+    return +data.hasHealthcare - 1;
+  })), (d3.max(povertyData, function (data) {
+    return +data.hasHealthcare + 1
+  }))]);
 
   var toolTip = d3.tip()
     .attr("class", "tooltip")
-    .offset([60, -60])
-    .html(function(data) {
+    .offset([80, -60])
+    .html(function (data) {
+      var state = data.State;
       var poverty = +data.poverty;
       var healthcare = +data.hasHealthcare;
-      return (poverty + "<br>"+ healthcare);
+      console.log(healthcare);
+      return (state + "<br>" + "Poverty: " + poverty + "%" + "<br>" + "Healthcare: " + healthcare + "%");
     });
 
   chart.call(toolTip);
@@ -67,39 +76,37 @@ d3.csv("data.csv", function(err, povertyData) {
   chart.selectAll("circle")
     .data(povertyData)
     .enter().append("circle")
-      .attr("cx", function(data, index) {
-        console.log(data.poverty);
-        return xLinearScale(data.poverty);
-      })
-      .attr("cy", function(data, index) {
-        return yLinearScale(data.hasHealthcare);
-      })
-      .attr("r", "15")
-      .attr("fill", "lightblue")
-      .on("click", function(data) {
-        toolTip.show(data);
-      })
-      // onmouseout event
-      .on("mouseout", function(data, index) {
-        toolTip.hide(data);
-      });
+    .attr("cx", function (data, index) {
+      return xLinearScale(data.poverty);
+    })
+    .attr("cy", function (data, index) {
+      return yLinearScale(data.hasHealthcare);
+    })
+    .attr("r", "15")
+    .attr("fill", "lightblue")
+    .on("mouseo", function (data) {
+      toolTip.show(data);
+    })
+    // onmouseout event
+    .on("mouseout", function (data, index) {
+      toolTip.hide(data);
+    });
 
   //add state abbreviation labels to data
-  chart.selectAll("label")
+  chart.selectAll("circleText")
     .data(povertyData)
     .enter()
     .append("text")
-    .attr("dx", function(data, index){
-      return xLinearScale(data.poverty)-11.5
+    .attr("dx", function (data, index) {
+      return xLinearScale(data.poverty) - 11.5
     })
-    .attr("dy", function(data){
-      return yLinearScale(data.hasHealthcare)+4
+    .attr("dy", function (data) {
+      return yLinearScale(data.hasHealthcare) + 4
     })
-    .text(function (data, index){
+    .text(function (data, index) {
       return data.abbreviation;
     })
-    .style("fill", "white")
-    ;
+    .style("fill", "white");
 
   chart.append("g")
     .attr("transform", `translate(0, ${height})`)
@@ -108,18 +115,18 @@ d3.csv("data.csv", function(err, povertyData) {
   chart.append("g")
     .call(leftAxis);
 
-// Append y-axis labels
+  // Append y-axis labels
   chart.append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left + 40)
-      .attr("x", 0 - (height / 2))
-      .attr("dy", "1em")
-      .attr("class", "axisText")
-      .text("Poverty");
-
-// Append x-axis labels
-  chart.append("text")
-    .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.top + 30) + ")")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left + 40)
+    .attr("x", 0 - (height / 1.1))
+    .attr("dy", "1em")
     .attr("class", "axisText")
-    .text("Healthcare");
+    .text("Percentage of Population in Poverty (by state)");
+
+  // Append x-axis labels
+  chart.append("text")
+    .attr("transform", "translate(" + (width / 3.1) + " ," + (height + margin.top + 30) + ")")
+    .attr("class", "axisText")
+    .text("Percentage of Population With Healthcare Access (by state)");
 });

@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>D3Times</title>
 	<link rel="stylesheet" href="assets/style.css">
-	<link rel="stylesheet" href="assets/d3style.css">
 	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	  crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 </head>
+
 <body>
 	<div class="container">
 		<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-						<h1>Poverty and Access to Healthcare</h1>
+			<div class="col-md-2"></div>
+			<div class="col-md-8 col-md-offset-2 align=center">
+				<h1>Poverty and Access to Healthcare</h1>
 
-						<p>The chart below explores the correlation between the poverty level and access to healthcare in the United States. </p>
+				<p>The chart below explores the correlation between the poverty level and access to healthcare in the United States. </p>
+				<div class="col-md-2"></div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-xs-11 col-sm-11 col-md-11 align=center">
+					<iframe style="width: 100vw;height: 80vh;position: relative;" src="d3.html" frameborder="0" allowfullscreen></iframe>
 				</div>
-
-			<div class="col-xs-12 col-md-9 col-md-offset-0">
-				<div class="chart">
-				</div> 	
+				<div class="col-md-2"></div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12  col-md-9 col-md-offset-0">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 align=center">
 				<div class="article">
-					<!-- Students: Replace with your analysis of the data -->
+					<p>The chart above shows the negative correlation between access to healthcare and those who are at the poverty level.
+						Analysis is based on data from the US Census Bureau and the Behavioral Risk Factor Surveillance System. There is a
+						very general trend showing that states with lower levels of poverty have higher access to healthcare. For example,
+						New Hampshire has the lowest poverty rate in the nation, and 88 percent of its residents have healthcare. Places like
+						Missouri and New Mexico have the highest poverty rates in the nation, but more than 80 percent still have access to
+						healthcare. One explanation for this could be the usage of Medicaid, which provides healthcare coverage for low income
+						families, according to Medicaid.gov.</p>
+
+					<p>There are states on that could be considered outliers, including Massachusetts and Texas. While Masschusetts does not
+						have the lowest poverty level (but still is on the lower side of the graph), the healthcare rate is more than 95 percent.
+						This is due to Massachusetts healthcare reform in the 2000s, which greatly expanded healthcare access to its residents.
+						Texas, on the other side of the coin, does not have the lowest poverty rate in the nation, yet the least amount of
+						its residents are uninsured. Texas did not partipcate in Medicaid expansion during the Obama error, which has limited
+						many people's access, according to the Dallas Observer.</p>
 				</div>
+				<div class="col-md-2"></div>
+
 			</div>
 		</div>
 	</div>
-
-		<!-- Footer-->
-	<div id="footer">
-		<p><!-- Insert your Copyright Info here --></p>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="assets/logic.js"></script>
 
-	
+
+	<!-- Footer-->
+	<div id="footer">
+		<p>Copyright© Emily Nassi 2018</p>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	  crossorigin="anonymous"></script>
 </body>
+
 </html>

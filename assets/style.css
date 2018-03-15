@@ -1,9 +1,10 @@
 .iframeContainer {
-  padding: 20px;
+  padding: 0px;
   border: 1px solid #e3e3e3;
 }
 
 /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+
 html {
   position: relative;
   min-height: 100%;
@@ -17,7 +18,8 @@ body {
 #footer {
   position: absolute;
   bottom: 0;
-  width: 100%; /* Set the fixed height of the footer here */
+  width: 100%;
+  /* Set the fixed height of the footer here */
   height: 10px;
   padding-top: 20px;
   padding-bottom: 40px;
