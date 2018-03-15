@@ -28,8 +28,6 @@ d3.csv("data.csv", function(err, povertyData) {
   povertyData.forEach(function(data) {
     data.poverty = +data.poverty;
     data.hasHealthcare = +data.hasHealthcare;
-    data.abbr = data.abbr
-    data.state = data.state
   });
 
 
@@ -57,7 +55,7 @@ d3.csv("data.csv", function(err, povertyData) {
 
   var toolTip = d3.tip()
     .attr("class", "tooltip")
-    .offset([80, -60])
+    .offset([60, -60])
     .html(function(data) {
       var poverty = +data.poverty;
       var healthcare = +data.hasHealthcare;
@@ -85,6 +83,23 @@ d3.csv("data.csv", function(err, povertyData) {
       .on("mouseout", function(data, index) {
         toolTip.hide(data);
       });
+
+  //add state abbreviation labels to data
+  chart.selectAll("label")
+    .data(povertyData)
+    .enter()
+    .append("text")
+    .attr("dx", function(data, index){
+      return xLinearScale(data.poverty)-11.5
+    })
+    .attr("dy", function(data){
+      return yLinearScale(data.hasHealthcare)+4
+    })
+    .text(function (data, index){
+      return data.abbreviation;
+    })
+    .style("fill", "white")
+    ;
 
   chart.append("g")
     .attr("transform", `translate(0, ${height})`)
